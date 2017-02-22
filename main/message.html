@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>提示信息</title>
+    <style>
+        .box{
+            height:200px;
+            width: 300px;
+            border:1px solid #ddd;
+            margin:auto;
+            position:fixed;
+            left:0;top:0;
+            right:0;bottom:200px;
+        }
+        h3{
+            line-height:40px;
+            height:40px;
+            width:100%;
+            background:#eee;
+            text-align:center;
+            font-weight:500;
+            margin:0;
+        }
+        .con{
+            padding-top:10px;
+            line-height:40px;
+            width:100%;
+            text-align:center;
+        }
+    </style>
+    <script src="../../../js/jquery.js"></script>
+    <script>
+
+        $(window).ready(function(){
+            var url=$(".con a").prop("href");
+            var nub=3;
+            var t=setInterval(function(){
+                nub--;
+                if(nub==0){
+                    location.href=url;
+                }else{
+                    $("span").html(nub);
+                }
+            },1000)
+        });
+
+    </script>
+</head>
+<body>
+<div class="box">
+    <h3>提示信息</h3>
+    <div class="con">
+        <?php echo $message;?><br />
+        <span>3</span>秒后返回首页<br />
+        如果没有跳转<a href="<?php echo $url; ?>">点击这里</a>
+    </div>
+</div>
+</body>
+</html>
