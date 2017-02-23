@@ -20,5 +20,5 @@
 *  html+css
 *  php
 *  javascript
-    *  jquery库
+    *  jquery库   
 ## 配置环境
